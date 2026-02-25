@@ -1,0 +1,19 @@
+{
+  "name": "Hotel Security System",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/postgresql:1": {
+      "version": "15"
+    }
+  },
+  "postCreateCommand": "pip install -r backend/requirements.txt && cd frontend && npm install",
+  "forwardPorts": [8000, 3000, 5432],
+  "portsAttributes": {
+    "8000": {"label": "Django API"},
+    "3000": {"label": "Next.js Frontend"},
+    "5432": {"label": "PostgreSQL"}
+  }
+}
